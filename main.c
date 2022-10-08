@@ -21,9 +21,14 @@ int main (int argc, char **argv){
     string = malloc(n + 1);
     if (!string){
         printf("unable to allocate memory");
-        return (0);
+        return (1);
     }
-    n_read = fread(string,n, 1, f);
+    n_read = fread(string,n,1, f);
+    if (!n_read)
+        {
+            /* printf("No bytes of data was read\n");
+ */            return (1);
+        }
     fclose(f);
     string[n] = 0;
     
@@ -38,4 +43,6 @@ int main (int argc, char **argv){
         printf("%llu=%lld*%ld\n",atoll(content), p->p, p->q); 
         content= strtok(NULL, "\n");
     }
+     printf("%ld\n\t", n_read);
+    return (0);
 }
