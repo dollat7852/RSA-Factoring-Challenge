@@ -32,7 +32,7 @@ def is_prime(n, y = 2):
 
 def factors(n):
     i = 2
-    while (i <= n/2):
+    while (i <= sqrt(n)):
         if (n%i == 0 and is_prime(i)):
             p = int(n/i)
             q = i
