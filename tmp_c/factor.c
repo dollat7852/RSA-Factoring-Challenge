@@ -3,6 +3,7 @@
 factots *factorize (unsigned long long int n){
    long i = 2;
     factots *qoutents;
+    
 
     qoutents = malloc(sizeof (factots));
     if (!qoutents)
@@ -11,7 +12,7 @@ factots *factorize (unsigned long long int n){
     while (i <= n)
     {
         // printf("in factos\n");
-        if (n%i == 0)
+        if (n%i == 0 && i <= n/2)
         {
             qoutents->p = n/i;
             qoutents->q = i;
@@ -26,5 +27,8 @@ factots *factorize (unsigned long long int n){
         }
         i++;
     }
-    exit(EXIT_FAILURE);
+    qoutents->p = 0;
+    qoutents->q = 0;
+    return (qoutents);
+    exit(EXIT_SUCCESS);
 }

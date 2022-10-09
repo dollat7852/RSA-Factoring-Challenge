@@ -40,7 +40,8 @@ int main (int argc, char **argv){
         /* printf("%s\t", content); */
         p = factorize(atoll(content));
         ii++;
-        printf("%llu=%lld*%ld\n",atoll(content), p->p, p->q); 
+        if (p->p != 0)
+            printf("%llu=%lld*%ld\n",atoll(content), p->p, p->q); 
         content= strtok(NULL, "\n");
     }
     return (0);

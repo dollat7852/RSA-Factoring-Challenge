@@ -20,7 +20,9 @@ int is_prime_number(unsigned long long int n)
 
 int _is_prime(unsigned long long int n, int  y)
 {
-	if (y >= n && n > 1)
+    long double a , b;
+
+	/* if (y >= n && n > 1)
     {
         // printf("%llu is prrime\n", n);
 		return (1);
@@ -30,5 +32,17 @@ int _is_prime(unsigned long long int n, int  y)
         // printf("%llu is not a prime\n", n);
 		return (0);
     }
-	return (_is_prime(n, y + 1));
+	return (_is_prime(n, y + 1)); */
+
+    
+    b = 4.0;
+    a = sqrtl(5);
+
+    while (y <= sqrtl(n))
+    {
+        if (n % y == 0 || n <= 1)
+            return (0);
+        y++;
+    }
+    return (1);
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 
+from operator import is_
 from os import fdopen
 from re import I
 from sys import argv
@@ -21,23 +22,24 @@ def main ():
     else:
         print("no line read")
 
-def is_prime(n, y):
+def is_prime(n, y = 2):
     while (y <= sqrt(n)):
         if (n%y == 0):
             return (0)
         y= y+1
-    print("{} is prime".format(n))
+    # print("{} is prime".format(n))
     return (1)
 
 def factors(n):
     i = 2
     while (i <= n/2):
-        if (n%i == 0):
+        if (n%i == 0 and is_prime(i)):
             p = int(n/i)
             q = i
-            return(p, i)
+            if (is_prime(q) and is_prime(p)):
+                return(p, i)
         i+=1
-
+    return(0, 0)
 
 
 

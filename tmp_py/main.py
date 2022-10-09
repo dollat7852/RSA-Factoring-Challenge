@@ -33,9 +33,9 @@ def factors(n):
     i = 2
     while (i <= n/2):
         if (n%i == 0):
-            p = int(n/i)
+            p = n/i
             q = i
-            return(p, i)
+            return(i, n)
         i+=1
 
 
