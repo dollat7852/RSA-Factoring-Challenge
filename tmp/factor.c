@@ -1,6 +1,6 @@
 #include "RSA.h"
 
-factots *factorize (long long n){
+factots *factorize (unsigned long long int n){
    long i = 2;
     factots *qoutents;
 
@@ -8,12 +8,21 @@ factots *factorize (long long n){
     if (!qoutents)
         return NULL;
 
-    while (i <= n){
-        if (n % i == 0){
+    while (i <= n)
+    {
+        // printf("in factos\n");
+        if (n%i == 0)
+        {
             qoutents->p = n/i;
             qoutents->q = i;
+            // return (qoutents);
+            
+            // if (is_prime_number(n/i) && is_prime_number(i))
+            if (prime_fact(qoutents))
+            {
             return (qoutents);
             exit(EXIT_SUCCESS);
+            } 
         }
         i++;
     }

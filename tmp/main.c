@@ -3,7 +3,7 @@
 int main (int argc, char **argv){
     FILE *f;
     int n_bytes, ii;
-    long int n;
+    unsigned long long int n;
     size_t n_read;
     char **lines;
     char *content, *string;
@@ -43,6 +43,5 @@ int main (int argc, char **argv){
         printf("%llu=%lld*%ld\n",atoll(content), p->p, p->q); 
         content= strtok(NULL, "\n");
     }
-     printf("%ld\n\t", n_read);
     return (0);
 }
